@@ -3,8 +3,8 @@ import Link from "next/link";
 const plans = [
   {
     name: "Starter",
-    price: "₹2,100",
-    period: "/month",
+    price: "0000",
+    period: "",
     desc: "Perfect for small businesses getting started with AI.",
     features: [
       { text: "Text Agent (Chat)", detail: "One Chatbot • Custom Text Agent • Max 50 pages • 10K conversations" },
@@ -19,8 +19,8 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "₹4,200",
-    period: "/month",
+    price: "0000",
+    period: "",
     desc: "Perfect for growing businesses scaling their AI use.",
     features: [
       { text: "Text Agent (Chat)", detail: "Two Chatbots • Custom Text Agent • Max 100 pages • 20K conversations" },
@@ -35,8 +35,8 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "₹8,400",
-    period: "/month",
+    price: "0000",
+    period: "",
     desc: "For scaling businesses with advanced AI needs.",
     features: [
       { text: "Text Agent (Chat)", detail: "Multiple Chatbots • Custom Text, Voice-ready • Max 200 pages • 40K conversations" },
