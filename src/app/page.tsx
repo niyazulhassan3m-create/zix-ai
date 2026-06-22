@@ -3,7 +3,6 @@ import Link from "next/link";
 const agents = [
   { img: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=150&q=80&auto=format&fit=crop", title: "Text Agent", desc: "Chatbots for websites, WhatsApp, Instagram & Facebook", href: "/agents/text-agent" },
   { img: "https://images.unsplash.com/photo-1552581234-26160f608093?w=150&q=80&auto=format&fit=crop", title: "Voice Agent", desc: "Inbound & outbound AI voice calls", href: "/agents/voice-agent" },
-  { img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=150&q=80&auto=format&fit=crop", title: "3D Avatar Agent", desc: "Lifelike digital humans", href: "/agents/3d-avatar-agent" },
   { img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=150&q=80&auto=format&fit=crop", title: "Testing Agent", desc: "AI-powered QA automation", href: "/agents/testing-agent" },
   { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=150&q=80&auto=format&fit=crop", title: "Analytics Agent", desc: "Ad & performance analytics", href: "/agents/analytics-agent" },
   { img: "https://images.unsplash.com/photo-1558478551-1a378f63328e?w=150&q=80&auto=format&fit=crop", title: "Media Agent", desc: "AI content & image generation", href: "/agents/media-agent" },
@@ -29,7 +28,7 @@ export default function Home() {
             That Work Like a Team
           </h1>
           <p className="text-grey-400 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
-            Text Agent • Voice Agent • 3D Avatar • Testing • Analytics • Media
+            Text Agent • Voice Agent • Testing • Analytics • Media
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link href="/agents" className="px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-accent-500 transition-all">
@@ -47,7 +46,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "6", label: "AI Agents" },
+              { value: "5", label: "AI Agents" },
               { value: "50+", label: "Enterprise Clients" },
               { value: "99.9%", label: "Uptime" },
               { value: "24/7", label: "Support" },
@@ -82,7 +81,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">The Agent Team</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">One Platform. Six AI Agents.</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">One Platform. Five AI Agents.</h2>
             <p className="text-grey-400 text-lg">From customer conversations to content creation — all powered by AI with Tanglish support.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

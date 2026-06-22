@@ -48,7 +48,7 @@ export default function TestingAgentPage() {
         </div>
 
         <div className="flex justify-center gap-4 mt-6">
-          <Link href="/agents/3d-avatar-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">← 3D Avatar Agent</Link>
+          <Link href="/agents/voice-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">← Voice Agent</Link>
           <span className="text-grey-700">|</span>
           <Link href="/agents/text-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">Text Agent →</Link>
         </div>

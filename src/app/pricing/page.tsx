@@ -121,7 +121,7 @@ export default function Pricing() {
               <h2 className="text-2xl font-bold mb-4">Enterprise</h2>
               <p className="text-grey-400 mb-2">Custom pricing for large organizations.</p>
               <p className="text-sm text-grey-500 mb-6">
-                All agents included • Unlimited calls & reports • 3D Avatar Agent • Testing Agent • 24/7 dedicated support
+                All agents included • Unlimited calls & reports • Testing Agent • 24/7 dedicated support
               </p>
               <Link href="/contact" className="inline-flex px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-accent-500 transition-all">
                 Contact Sales

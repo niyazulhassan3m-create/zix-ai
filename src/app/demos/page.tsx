@@ -20,15 +20,6 @@ const demos = [
     href: "/agents/voice-agent",
   },
   {
-    title: "3D Avatar Agent",
-    tagline: "Digital Human Demo",
-    desc: "Lifelike 3D avatars that greet and guide your website visitors. Customizable appearance and personality.",
-    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&q=80&auto=format&fit=crop",
-    features: ["3D avatar preview", "Customizable looks", "Tanglish greeting", "Multi-platform"],
-    interactive: true,
-    href: "/agents/3d-avatar-agent",
-  },
-  {
     title: "Testing Agent",
     tagline: "QA Automation Demo",
     desc: "AI-powered test generation and execution. Reduce QA time by 80% with automated testing.",
@@ -66,7 +57,7 @@ export default function Demos() {
           <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Try It Yourself</p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Interactive Demos</h1>
           <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-            Try all six AI agents interactively — no signup required.
+            Try all five AI agents interactively — no signup required.
           </p>
         </div>
       </section>

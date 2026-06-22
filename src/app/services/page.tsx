@@ -16,13 +16,6 @@ const agents = [
     features: ["Inbound call answering", "Outbound cold calling", "Sentiment analysis", "Intent detection", "Live agent handoff", "Call summaries & analytics"],
   },
   {
-    title: "3D Avatar Agent",
-    tagline: "Immersive Digital Human",
-    desc: "Lifelike 3D avatars that greet customers, guide them through products, and create engaging brand experiences. Perfect for kiosks, virtual stores, and web.",
-    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&q=80&auto=format&fit=crop",
-    features: ["Customizable 3D avatar", "Realistic facial animation", "Multi-platform support", "Voice & text interaction", "Brand personality matching", "Live & pre-recorded modes"],
-  },
-  {
     title: "Testing Agent",
     tagline: "AI QA & Automation",
     desc: "Automated testing for web and mobile applications. AI generates test cases, executes them, and reports bugs — reducing QA time by 80%.",
@@ -58,7 +51,7 @@ export default function Services() {
               AI Agents for Every Business Need
             </h1>
             <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-              Six specialized AI agents that work together — from chatbots to voice calls, analytics to content creation.
+              Five specialized AI agents that work together — from chatbots to voice calls, analytics to content creation.
             </p>
           </div>
 
