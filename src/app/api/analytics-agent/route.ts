@@ -25,47 +25,48 @@ Provide actionable recommendations based on patterns in the data.`;
 export async function POST(req: NextRequest) {
   try {
     const { message, history = [] } = await req.json();
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
     if (!apiKey) {
       return NextResponse.json(
-        { error: "Analytics agent not configured. Add NEXT_PUBLIC_GEMINI_API_KEY to .env.local" },
+        { error: "Analytics agent not configured. Add NEXT_PUBLIC_OPENAI_API_KEY to .env.local" },
         { status: 500 }
       );
     }
 
-    const contents = [
-      { role: "user", parts: [{ text: SYSTEM_PROMPT }] },
-      { role: "model", parts: [{ text: "Understood. I am the Analytics Agent for Lab Y AI Solutions. I will provide data-driven insights in Tanglish." }] },
+    const messages = [
+      { role: "system", content: SYSTEM_PROMPT },
       ...history.map((m: any) => ({
-        role: m.role === "ai" ? "model" : "user",
-        parts: [{ text: m.text }],
+        role: m.role === "ai" ? "assistant" : "user",
+        content: m.text,
       })),
-      { role: "user", parts: [{ text: message }] },
+      { role: "user", content: message },
     ];
 
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents,
-          generationConfig: { temperature: 0.7, maxOutputTokens: 200 },
-        }),
-      }
-    );
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages,
+        temperature: 0.7,
+        max_tokens: 200,
+      }),
+    });
 
     const data = await res.json();
 
     if (!res.ok) {
       return NextResponse.json(
-        { error: data.error?.message || "Gemini API error" },
+        { error: data.error?.message || "OpenAI API error" },
         { status: res.status }
       );
     }
 
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "Sorry, enakku puriyala. Konjam wait pannunga.";
+    const text = data?.choices?.[0]?.message?.content?.trim() || "Sorry, enakku puriyala. Konjam wait pannunga.";
     return NextResponse.json({ response: text });
   } catch (err: any) {
     return NextResponse.json({ error: err.message || "Server error" }, { status: 500 });

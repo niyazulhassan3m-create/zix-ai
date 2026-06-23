@@ -5,7 +5,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 type Tab = "call" | "browser" | "chat";
 
 const VAPI_CONFIGURED = !!(process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY && process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID);
-const GEMINI_CONFIGURED = !!process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const OPENAI_CONFIGURED = !!process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
 const COUNTRY_CODES = [
   { code: "+91", label: "🇮🇳 India" },
@@ -102,7 +102,7 @@ export default function VoiceAgent() {
     synth.speak(u);
   }, []);
 
-  const queryGemini = useCallback(async (text: string) => {
+  const queryAI = useCallback(async (text: string) => {
     setThinking(true);
     try {
       const res = await fetch("/api/voice-agent", {
@@ -124,11 +124,11 @@ export default function VoiceAgent() {
   }, [speak, tab]);
 
   const processInput = useCallback((text: string) => {
-    if (!text.trim() || !GEMINI_CONFIGURED) return;
+    if (!text.trim() || !OPENAI_CONFIGURED) return;
     setTranscript("");
     setChat((prev) => [...prev, { role: "user", text }]);
-    queryGemini(text);
-  }, [queryGemini]);
+    queryAI(text);
+  }, [queryAI]);
 
   const startListening = useCallback(() => {
     if (recognitionRef.current) recognitionRef.current.stop();
@@ -153,7 +153,7 @@ export default function VoiceAgent() {
 
   const handleTypeSend = () => { if (typeText.trim()) { processInput(typeText); setTypeText(""); } };
 
-  const needsSetup = !VAPI_CONFIGURED && !GEMINI_CONFIGURED;
+  const needsSetup = !VAPI_CONFIGURED && !OPENAI_CONFIGURED;
 
   return (
     <div className="rounded-2xl border border-white/5 bg-gradient-to-br from-accent-900/20 to-card overflow-hidden">
@@ -185,7 +185,7 @@ export default function VoiceAgent() {
           <div className="text-left max-w-lg mx-auto space-y-3 mb-4">
             <div className="bg-black/40 rounded-xl p-3">
               <p className="text-[11px] text-grey-500 mb-1">Free — Browser/Text Agent:</p>
-              <code className="text-[12px] text-accent-300">NEXT_PUBLIC_GEMINI_API_KEY=AIzaSy...</code>
+              <code className="text-[12px] text-accent-300">NEXT_PUBLIC_OPENAI_API_KEY=sk-...</code>
             </div>
             <div className="bg-black/40 rounded-xl p-3">
               <p className="text-[11px] text-grey-500 mb-1">Premium — Real Phone Calls:</p>
@@ -193,8 +193,8 @@ export default function VoiceAgent() {
               <code className="text-[12px] text-accent-300 block">NEXT_PUBLIC_VAPI_ASSISTANT_ID=...</code>
             </div>
           </div>
-          <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" className="text-accent-400 text-sm hover:underline">
-            Get your free Gemini key →
+          <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-accent-400 text-sm hover:underline">
+            Get your OpenAI key →
           </a>
         </div>
       )}
@@ -304,7 +304,7 @@ export default function VoiceAgent() {
               <div className="flex justify-center gap-4 mb-4">
                 <button
                   onClick={listening ? stopListening : startListening}
-                  disabled={!GEMINI_CONFIGURED || !voiceReady}
+                  disabled={!OPENAI_CONFIGURED || !voiceReady}
                   className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${
                     listening ? "bg-red-500 text-white shadow-lg shadow-red-500/30 animate-pulse" : "bg-accent-600 text-white shadow-lg shadow-accent-600/30 hover:bg-accent-500 hover:scale-105"
                   } disabled:opacity-40`}
@@ -335,8 +335,8 @@ export default function VoiceAgent() {
                 <div ref={chatEndRef} />
               </div>
 
-              {!GEMINI_CONFIGURED && (
-                <p className="text-center text-[11px] text-grey-600">Add <code className="text-accent-300">NEXT_PUBLIC_GEMINI_API_KEY</code> to enable AI</p>
+              {!OPENAI_CONFIGURED && (
+                <p className="text-center text-[11px] text-grey-600">Add <code className="text-accent-300">NEXT_PUBLIC_OPENAI_API_KEY</code> to enable AI</p>
               )}
               <div className="flex gap-2 mt-2">
                 <input type="text" value={typeText} onChange={(e) => setTypeText(e.target.value)} onKeyDown={(e) => e.key === "Enter" && handleTypeSend()} placeholder="Type in Tanglish..." className="flex-1 px-4 py-2.5 rounded-xl border border-white/5 bg-black/40 text-white text-sm placeholder:text-grey-600 focus:outline-none focus:border-accent-600/30" />
@@ -372,12 +372,12 @@ export default function VoiceAgent() {
                 <div ref={chatEndRef} />
               </div>
               <div className="flex gap-2">
-                <input type="text" value={typeText} onChange={(e) => setTypeText(e.target.value)} onKeyDown={(e) => e.key === "Enter" && handleTypeSend()} placeholder={GEMINI_CONFIGURED ? "Type your message..." : "Add API key to chat..."} disabled={!GEMINI_CONFIGURED} className="flex-1 px-4 py-3 rounded-xl border border-white/5 bg-black/40 text-white text-sm placeholder:text-grey-600 focus:outline-none focus:border-accent-600/30 disabled:opacity-40" />
-                <button onClick={handleTypeSend} disabled={!typeText.trim() || !GEMINI_CONFIGURED} className="px-5 py-3 rounded-xl bg-accent-600 text-white disabled:opacity-40 hover:bg-accent-500 transition-all">
+                <input type="text" value={typeText} onChange={(e) => setTypeText(e.target.value)} onKeyDown={(e) => e.key === "Enter" && handleTypeSend()} placeholder={OPENAI_CONFIGURED ? "Type your message..." : "Add API key to chat..."} disabled={!OPENAI_CONFIGURED} className="flex-1 px-4 py-3 rounded-xl border border-white/5 bg-black/40 text-white text-sm placeholder:text-grey-600 focus:outline-none focus:border-accent-600/30 disabled:opacity-40" />
+                <button onClick={handleTypeSend} disabled={!typeText.trim() || !OPENAI_CONFIGURED} className="px-5 py-3 rounded-xl bg-accent-600 text-white disabled:opacity-40 hover:bg-accent-500 transition-all">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </button>
               </div>
-              {!GEMINI_CONFIGURED && <p className="text-center text-[11px] text-grey-600 mt-3">Add <code className="text-accent-300">NEXT_PUBLIC_GEMINI_API_KEY</code> to .env.local</p>}
+              {!OPENAI_CONFIGURED && <p className="text-center text-[11px] text-grey-600 mt-3">Add <code className="text-accent-300">NEXT_PUBLIC_OPENAI_API_KEY</code> to .env.local</p>}
             </div>
           )}
         </>

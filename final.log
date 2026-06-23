@@ -635,3 +635,6 @@ Import trace:
 ✓ Compiled in 114ms
 ✓ Compiled in 194ms
 ✓ Finished writing to filesystem cache in 11.7s
+  Reload env: .env.local
+✓ Compiled in 4.9s
+✓ Compiled in 590ms

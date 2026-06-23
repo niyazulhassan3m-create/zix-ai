@@ -3,11 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
-const GEMINI_OK = !!process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const OPENAI_OK = !!process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 
 export default function TextAgentPage() {
   const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>(
-    GEMINI_OK ? [] : [{ role: "ai", text: "Hi! I'm Yara, Lab Y's text agent. Ask me anything about our products!" }]
+    OPENAI_OK ? [] : [{ role: "ai", text: "Hi! I'm Yara, Lab Y's text agent. Ask me anything about our products!" }]
   );
   const [input, setInput] = useState("");
   const [thinking, setThinking] = useState(false);
@@ -20,7 +20,7 @@ export default function TextAgentPage() {
     const text = input;
     setInput("");
     setMessages((prev) => [...prev, { role: "user", text }]);
-    if (!GEMINI_OK) {
+    if (!OPENAI_OK) {
       setTimeout(() => {
         let reply = "That's a great question! I'd recommend checking our Services page or booking a demo.";
         const q = text.toLowerCase();
@@ -69,7 +69,7 @@ export default function TextAgentPage() {
             </svg>
             <div>
               <p className="text-sm font-semibold">Yara — Text Agent</p>
-              <p className="text-[10px] text-green-400 font-medium">{GEMINI_OK ? "Gemini AI" : "Rule-based"}</p>
+              <p className="text-[10px] text-green-400 font-medium">{OPENAI_OK ? "ChatGPT AI" : "Rule-based"}</p>
             </div>
           </div>
           <div className="h-[350px] overflow-y-auto p-4 space-y-3">
