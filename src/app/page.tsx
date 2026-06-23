@@ -70,7 +70,7 @@ export default function Home() {
           <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Our AI Technology</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Built on Advanced AI</h2>
           <p className="text-grey-300 text-lg max-w-2xl mx-auto">
-            Powered by ChatGPT, Web Speech API, and Vapi telephony — our agents
+            Powered by Google Gemini, Web Speech API, and Vapi telephony — our agents
             understand Tanglish, respond naturally, and automate your business 24/7.
           </p>
         </div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const OPENAI_OK = !!process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+const GEMINI_OK = !!process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
 export default function MediaAgentPage() {
   const [prompt, setPrompt] = useState("");
@@ -13,7 +13,7 @@ export default function MediaAgentPage() {
 
   const generate = async () => {
     if (!prompt.trim()) return;
-    if (!OPENAI_OK) {
+    if (!GEMINI_OK) {
       const colors = ["accent", "blue", "green", "yellow", "purple"];
         const c = colors[Math.floor(Math.random() * colors.length)];
       setImage(`https://placehold.co/600x400/1e1e1e/9B2D3E?text=${encodeURIComponent(prompt.slice(0, 30))}`);
@@ -73,10 +73,10 @@ export default function MediaAgentPage() {
             </div>
           )}
 
-          {!OPENAI_OK && !image && (
+          {!GEMINI_OK && !image && (
             <div className="text-center py-8">
               <p className="text-grey-500 text-sm">Enter a prompt and generate a preview</p>
-              <p className="text-grey-600 text-xs mt-1">Add <code className="text-accent-300">NEXT_PUBLIC_OPENAI_API_KEY</code> for AI-powered descriptions</p>
+              <p className="text-grey-600 text-xs mt-1">Add <code className="text-accent-300">NEXT_PUBLIC_GEMINI_API_KEY</code> for AI-powered descriptions</p>
             </div>
           )}
         </div>

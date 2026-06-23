@@ -639,3 +639,5 @@ Import trace:
 ✓ Compiled in 4.9s
 ✓ Compiled in 590ms
   Reload env: .env.local
+  Reload env: .env.local
+✓ Compiled in 1003ms
