@@ -66,10 +66,7 @@ export default function Home() {
 
       {/* Technology */}
       <section className="relative py-28 px-4 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1400&q=80&auto=format&fit=crop" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/95 to-[#1a1a1a]/80" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-accent-900/10 via-transparent to-transparent" />
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Our AI Technology</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Built on Advanced AI</h2>

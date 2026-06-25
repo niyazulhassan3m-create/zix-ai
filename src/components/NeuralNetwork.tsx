@@ -77,7 +77,7 @@ function NeuralLines() {
 
   return (
     <lineSegments ref={lineRef} geometry={geometry}>
-      <lineBasicMaterial color="#800000" opacity={0.15} transparent />
+      <lineBasicMaterial color="#7B1E2D" opacity={0.15} transparent />
     </lineSegments>
   );
 }
@@ -91,7 +91,7 @@ function CenterCore() {
   return (
     <mesh ref={meshRef}>
       <icosahedronGeometry args={[0.8, 1]} />
-      <meshBasicMaterial color="#800000" wireframe transparent opacity={0.4} />
+      <meshBasicMaterial color="#7B1E2D" wireframe transparent opacity={0.4} />
     </mesh>
   );
 }
@@ -100,7 +100,7 @@ function GlowSphere() {
   return (
     <mesh>
       <sphereGeometry args={[1.2, 32, 32]} />
-      <meshBasicMaterial color="#800000" transparent opacity={0.04} />
+      <meshBasicMaterial color="#7B1E2D" transparent opacity={0.04} />
     </mesh>
   );
 }
