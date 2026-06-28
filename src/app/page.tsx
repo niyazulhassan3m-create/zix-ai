@@ -93,7 +93,7 @@ export default function Home() {
         <section className="relative py-20 px-4">
           <div className="absolute inset-0 bg-gradient-to-b from-accent-900/5 via-transparent to-transparent pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
-            <GlassCard className="p-10">
+            <GlassCard className="p-10" floatDelay={0}>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 {[
                   { value: "5", label: "AI Agents" },
@@ -145,7 +145,7 @@ export default function Home() {
                   variants={fadeUp}
                   className="text-center"
                 >
-                  <GlassCard className="p-8 h-full">
+                  <GlassCard className="p-8 h-full" floatDelay={i * 0.4}>
                     <span className="text-4xl font-bold text-accent-600/30 block mb-4">{s.num}</span>
                     <h3 className="text-lg font-bold mb-2">{s.title}</h3>
                     <p className="text-sm text-grey-400">{s.desc}</p>
@@ -181,7 +181,7 @@ export default function Home() {
                   className="w-full"
                 >
                   <Link href={a.href} className="group block h-full">
-                    <GlassCard className="p-6 h-full">
+                    <GlassCard className="p-6 h-full" floatDelay={i * 0.35}>
                       <span className="text-2xl block mb-4">{a.emoji}</span>
                       <h3 className="text-lg font-bold mb-1 group-hover:text-accent-400 transition-colors">{a.title}</h3>
                       <p className="text-sm text-grey-400">{a.desc}</p>
@@ -201,7 +201,7 @@ export default function Home() {
       <AnimatedSection>
         <section className="py-24 px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <GlassCard className="p-12 md:p-16">
+            <GlassCard className="p-12 md:p-16" floatDelay={0.2}>
               <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-4">14-Day Free Trial</p>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
               <p className="text-grey-400 mb-8 max-w-lg mx-auto">
