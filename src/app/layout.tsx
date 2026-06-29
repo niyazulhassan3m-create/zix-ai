@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const sora = Sora({
-  variable: "--font-heading",
+  variable: "--font-heading-fallback",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -38,6 +38,9 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${sora.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/ef8a59c146027de56b9f1646a6c36ce0?family=Cassannet+Plus" />
+      </head>
       <body className="min-h-full flex flex-col">
         <ParticlesBackground />
         <Header />

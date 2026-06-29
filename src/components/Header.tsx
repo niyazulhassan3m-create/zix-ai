@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -21,11 +22,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
         <Link href="/" className="flex items-center">
-          <img
-            src="/logo.svg"
-            alt="Lab Y - Innovating Intelligence"
-            className="h-16 w-auto"
-          />
+          <Logo className="h-16 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

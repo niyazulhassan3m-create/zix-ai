@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const footerLinks = [
   { href: "/", label: "Home" },
@@ -14,11 +15,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
           <Link href="/" className="flex items-center">
-            <img
-              src="/logo.svg"
-              alt="Lab Y - Innovating Intelligence"
-              className="h-14 w-auto"
-            />
+            <Logo className="h-14 w-auto" />
           </Link>
           <div className="flex items-center gap-6">
             {footerLinks.map((l) => (
