@@ -12,7 +12,7 @@ const agents = [
   { emoji: "🧪", title: "Testing Agent", desc: "AI-powered QA automation at scale", href: "/agents/testing-agent" },
   { emoji: "📊", title: "Analytics Agent", desc: "Ad & performance analytics with AI insights", href: "/agents/analytics-agent" },
   { emoji: "🎨", title: "Media Agent", desc: "AI content & image generation", href: "/agents/media-agent" },
-  { emoji: "🌐", title: "Website Agent", desc: "AI-powered fast-turnaround website development", href: "/agents/website-agent" },
+  { emoji: "🌐", title: "Website Developing", desc: "AI-integrated custom website development — we build for you", href: "/agents/website-agent" },
 ];
 
 const fadeUp = {
@@ -25,7 +25,7 @@ const fadeUp = {
 };
 
 const steps = [
-  { num: "01", title: "Choose Your Agent", desc: "Pick from 6 specialized AI agents — Text, Voice, Testing, Analytics, Media, or Website." },
+  { num: "01", title: "Choose Your Agent", desc: "Pick from 6 specialized AI services — Text, Voice, Testing, Analytics, Media, or Website." },
   { num: "02", title: "Deploy in Minutes", desc: "No coding needed. Our platform connects your business in under 15 minutes." },
   { num: "03", title: "Watch It Work", desc: "Your AI agent handles conversations, tests, analytics, and content — all in Tanglish." },
 ];

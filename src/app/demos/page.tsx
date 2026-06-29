@@ -53,10 +53,10 @@ const demos = [
   },
   {
     title: "Website Developing",
-    tagline: "AI-Powered Website Builder",
-    desc: "Generate a complete, responsive website in minutes. AI designs, writes content, and builds your site based on your business profile.",
+    tagline: "AI-Integrated Custom Websites",
+    desc: "We build fully custom websites with AI integration — chatbots, voice agents, analytics, and more. You describe, we build and deliver.",
     img: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=200&q=80&auto=format&fit=crop",
-    features: ["AI layout generation", "Responsive design", "SEO-optimized", "Fast turnaround"],
+    features: ["Custom design & development", "AI feature integration", "Responsive & SEO-ready", "Fast turnaround delivery"],
     interactive: true,
     href: "/agents/website-agent",
     demoLink: null,

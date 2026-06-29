@@ -9,7 +9,7 @@ CRITICAL RULES:
 - Never say you're an AI or language model — you are Yara
 
 ABOUT LAB Y:
-- AI Agents: Text Agent (chatbots), Voice Agent (calls), Testing Agent, Analytics Agent, Media Agent, Website Agent
+- Services: Text Agent (chatbots), Voice Agent (calls), Testing Agent, Analytics Agent, Media Agent, AI Integrated Website Developing
 - Pricing: Starter ₹2,100/mo, Growth ₹4,200/mo, Professional ₹8,400/mo, Enterprise custom
 - 14-day free trial on all plans
 - Contact: hello@lab-y.ai or contact page for demos
@@ -25,13 +25,13 @@ function fallbackReply(msg: string): string {
   if (q.includes("hi") || q.includes("vanakkam") || q.includes("hello") || q.includes("hey")) return "Vanakkam! Naan Yara, Lab Y AI Solutions la AI agent. Ungaluku eppadi help pannanum? Products, pricing, demo — edhavadhu ketunga!";
   if (q.includes("pricing") || q.includes("price") || q.includes("cost") || q.includes("rate") || q.includes("vila")) return "Our pricing: Starter plan ₹2,100/mo, Growth ₹4,200/mo, Professional ₹8,400/mo. Enterprise plan custom. 14-day free trial available! Entha plan pathi details venum?";
   if (q.includes("demo") || q.includes("book") || q.includes("appointment") || q.includes("meeting")) return "Sure! Ungaluku demo book panna contact page ku ponga — lab-y-ai.vercel.app/contact. Atho illa namma sales team ku ping pannala?";
-  if (q.includes("service") || q.includes("product") || q.includes("offer") || q.includes("enna")) return "We have 6 AI Agents: Text Agent (chatbots), Voice Agent (calls), Testing Agent (QA), Analytics Agent (insights), Media Agent (content), Website Agent (fast websites). Ethula ungaluku interest?";
+  if (q.includes("service") || q.includes("product") || q.includes("offer") || q.includes("enna")) return "We have 6 AI services: Text Agent (chatbots), Voice Agent (calls), Testing Agent (QA), Analytics Agent (insights), Media Agent (content), AI Integrated Website Developing (custom sites). Ethula ungaluku interest?";
   if (q.includes("voice") || q.includes("call")) return "Our Voice Agent handles real phone calls using Vapi technology. It answers in Tanglish, captures leads, and transfers to humans when needed. Browser la um test pannalam!";
   if (q.includes("text") || q.includes("chat") || q.includes("bot")) return "Text Agent websites, WhatsApp, Instagram, Facebook la integrate aagum. 24/7 Tanglish la lead capture pannum. Unga website la use panna ready!";
   if (q.includes("analytics") || q.includes("anal")) return "Analytics Agent tracks all calls and conversations — sentiment analysis, intent detection, conversion tracking, daily AI briefings. Data-driven decisions edukka help pannum!";
   if (q.includes("media") || q.includes("image") || q.includes("video") || q.includes("content")) return "Media Agent generates marketing visuals, social media posts, logos, videos from text prompts. AI-powered content creation for your brand!";
   if (q.includes("testing") || q.includes("qa") || q.includes("test")) return "Testing Agent automates QA with AI-powered test generation, cross-browser testing, visual regression, and bug reporting. QA time 80% reduce pannum!";
-  if (q.includes("website") || q.includes("site") || q.includes("web") || q.includes("landing")) return "Website Agent builds AI-powered fast-turnaround websites. Describe your business — it generates a fully responsive, SEO-optimized site in hours!";
+  if (q.includes("website") || q.includes("site") || q.includes("web") || q.includes("landing")) return "Website Developing — naama ungaluku custom AI-integrated website build panni kuduppom. Unga business requirements describe panna, full website AI features with modern design la deliver pannuvom!";
   if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("phone")) return "Contact us at hello@lab-y.ai or visit lab-y-ai.vercel.app/contact. Quick demo book pannalam!";
   if (q.includes("trial") || q.includes("free") || q.includes("start")) return "14-day free trial on all plans! No credit card needed. Start panna lab-y-ai.vercel.app/contact la reach out pannunga!";
   if (q.includes("bye") || q.includes("thanks") || q.includes("thank") || q.includes("nandri") || q.includes("okay") || q.includes("ok")) return "Romba nandri! Ungaluku help panna mudinja santhosham. Demo book pannanum na contact page la reach out pannunga. Goodbye!";
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     if (!apiKey) {
       return NextResponse.json({
         status: "ok",
-        response: `Vanakkam! Naan Yara. Lab Y AI Solutions la AI agent. Ungaluku eppadi help pannanum?\n\nWe offer 6 AI Agents:\n🔹 Text Agent — Chatbots for websites & social media\n🔹 Voice Agent — Real phone calls in Tanglish\n🔹 Testing Agent — Automated QA\n🔹 Analytics Agent — Call insights & sentiment\n🔹 Media Agent — AI content generation\n🔹 Website Agent — AI-powered fast websites\n\n14-day free trial! Enna help venum?`
+        response: `Vanakkam! Naan Yara. Lab Y AI Solutions la AI agent. Ungaluku eppadi help pannanum?\n\nWe offer 6 AI Services:\n🔹 Text Agent — Chatbots for websites & social media\n🔹 Voice Agent — Real phone calls in Tanglish\n🔹 Testing Agent — Automated QA\n🔹 Analytics Agent — Call insights & sentiment\n🔹 Media Agent — AI content generation\n🔹 AI Integrated Website Developing — Custom websites with AI features\n\n14-day free trial! Enna help venum?`
       });
     }
 

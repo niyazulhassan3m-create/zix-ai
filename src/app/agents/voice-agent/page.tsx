@@ -23,7 +23,7 @@ export default function VoiceAgentPage() {
           <span className="text-grey-700">|</span>
           <Link href="/agents/analytics-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">Analytics Agent →</Link>
           <span className="text-grey-700">|</span>
-          <Link href="/agents/website-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">Website Agent →</Link>
+          <Link href="/agents/website-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">Website Developing →</Link>
         </div>
       </div>
     </section>

@@ -40,7 +40,7 @@ export default function WebsiteBuilderDemo() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             {business || "Your Business"} Website
           </h1>
-          <p className="text-grey-400 text-lg mb-10">AI-generated preview of your fast-turnaround website.</p>
+          <p className="text-grey-400 text-lg mb-10">Preview of your AI-integrated custom website.</p>
 
           {/* Mock website preview */}
           <div className="rounded-2xl border border-white/10 overflow-hidden mb-10 text-left">
