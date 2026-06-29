@@ -118,7 +118,8 @@ export default function VoiceAgent() {
         else if (q.includes("demo") || q.includes("book")) reply = "Demo book panna lab-y-ai.vercel.app/contact ku ponga!";
         else if (q.includes("voice") || q.includes("call")) reply = "Voice Agent real phone calls handle pannum Tanglish la. Vapi technology use pannrom!";
         else if (q.includes("text") || q.includes("chat")) reply = "Text Agent websites, WhatsApp, Instagram, Facebook la 24/7 lead capture pannum!";
-        else if (q.includes("service") || q.includes("product")) reply = "5 AI Agents: Text, Voice, Testing, Analytics, Media. Entha agent pathi ketunga!";
+        else if (q.includes("service") || q.includes("product")) reply = "6 AI Agents: Text, Voice, Testing, Analytics, Media, Website. Entha agent pathi ketunga!";
+        else if (q.includes("website") || q.includes("site") || q.includes("web")) reply = "Website Agent AI-powered fast-turnaround websites build pannum! Unga business describe panna responsive site ready in hours!";
         else if (q.includes("hi") || q.includes("vanakkam") || q.includes("hello")) reply = "Vanakkam! Naan Yara. Products, pricing, demo — edhavadhu ketunga!";
         else reply = "Vanakkam! Naan Yara. Lab Y AI Solutions la AI agent. Products, pricing, demo — edhavadhu specifically ketunga!";
       }

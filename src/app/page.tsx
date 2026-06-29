@@ -12,6 +12,7 @@ const agents = [
   { emoji: "🧪", title: "Testing Agent", desc: "AI-powered QA automation at scale", href: "/agents/testing-agent" },
   { emoji: "📊", title: "Analytics Agent", desc: "Ad & performance analytics with AI insights", href: "/agents/analytics-agent" },
   { emoji: "🎨", title: "Media Agent", desc: "AI content & image generation", href: "/agents/media-agent" },
+  { emoji: "🌐", title: "Website Agent", desc: "AI-powered fast-turnaround website development", href: "/agents/website-agent" },
 ];
 
 const fadeUp = {
@@ -24,7 +25,7 @@ const fadeUp = {
 };
 
 const steps = [
-  { num: "01", title: "Choose Your Agent", desc: "Pick from 5 specialized AI agents — Text, Voice, Testing, Analytics, or Media." },
+  { num: "01", title: "Choose Your Agent", desc: "Pick from 6 specialized AI agents — Text, Voice, Testing, Analytics, Media, or Website." },
   { num: "02", title: "Deploy in Minutes", desc: "No coding needed. Our platform connects your business in under 15 minutes." },
   { num: "03", title: "Watch It Work", desc: "Your AI agent handles conversations, tests, analytics, and content — all in Tanglish." },
 ];
@@ -65,7 +66,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-grey-400 text-lg sm:text-xl max-w-2xl mx-auto mb-8"
           >
-            Text Agent <span className="text-grey-600">•</span> Voice Agent <span className="text-grey-600">•</span> Testing <span className="text-grey-600">•</span> Analytics <span className="text-grey-600">•</span> Media
+            Text Agent <span className="text-grey-600">•</span> Voice Agent <span className="text-grey-600">•</span> Testing <span className="text-grey-600">•</span> Analytics <span className="text-grey-600">•</span> Media <span className="text-grey-600">•</span> Website
           </motion.p>
 
           <motion.div
@@ -96,7 +97,7 @@ export default function Home() {
             <GlassCard className="p-8" floatDelay={0}>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 {[
-                  { value: "5", label: "AI Agents" },
+                  { value: "6", label: "AI Agents" },
                   { value: "50+", label: "Enterprise Clients" },
                   { value: "99.9%", label: "Uptime" },
                   { value: "24/7", label: "Support" },

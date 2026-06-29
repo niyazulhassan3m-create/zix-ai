@@ -9,6 +9,7 @@ const demos = [
     features: ["Multi-platform support", "Tanglish conversation", "Lead capture", "24/7 availability"],
     interactive: true,
     href: "/agents/text-agent",
+    demoLink: null,
   },
   {
     title: "Voice Agent",
@@ -18,6 +19,7 @@ const demos = [
     features: ["Real phone calls (Vapi)", "Browser voice agent", "Tanglish AI conversation", "Call analytics"],
     interactive: true,
     href: "/agents/voice-agent",
+    demoLink: null,
   },
   {
     title: "Testing Agent",
@@ -27,6 +29,7 @@ const demos = [
     features: ["Auto test generation", "Cross-browser testing", "Visual regression", "Bug reporting"],
     interactive: true,
     href: "/agents/testing-agent",
+    demoLink: null,
   },
   {
     title: "Analytics Agent",
@@ -36,6 +39,7 @@ const demos = [
     features: ["Ad analytics dashboard", "ROI tracking", "Sentiment analysis", "Daily AI briefings"],
     interactive: true,
     href: "/agents/analytics-agent",
+    demoLink: null,
   },
   {
     title: "Media Agent",
@@ -45,6 +49,17 @@ const demos = [
     features: ["Image generation", "Video creation", "Social posters", "Brand assets"],
     interactive: true,
     href: "/agents/media-agent",
+    demoLink: null,
+  },
+  {
+    title: "Website Developing",
+    tagline: "AI-Powered Website Builder",
+    desc: "Generate a complete, responsive website in minutes. AI designs, writes content, and builds your site based on your business profile.",
+    img: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=200&q=80&auto=format&fit=crop",
+    features: ["AI layout generation", "Responsive design", "SEO-optimized", "Fast turnaround"],
+    interactive: true,
+    href: "/agents/website-agent",
+    demoLink: null,
   },
 ];
 
@@ -57,7 +72,7 @@ export default function Demos() {
           <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Try It Yourself</p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Interactive Demos</h1>
           <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-            Try all five AI agents interactively — no signup required.
+            Try all six AI services interactively — no signup required.
           </p>
         </div>
       </section>
@@ -80,6 +95,11 @@ export default function Demos() {
                     <Link href={d.href} className="inline-flex px-5 py-2.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-accent-500 transition-all">
                       Try Now →
                     </Link>
+                    {d.demoLink && (
+                      <a href={d.demoLink} target="_blank" rel="noopener noreferrer" className="inline-flex px-5 py-2.5 rounded-lg border border-white/10 text-grey-300 text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-white/5 transition-all backdrop-blur-sm">
+                        Live Demo ↗
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div>

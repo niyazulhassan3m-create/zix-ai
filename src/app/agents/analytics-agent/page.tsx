@@ -332,6 +332,8 @@ export default function AnalyticsAgentPage() {
           <Link href="/agents/text-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">← Text Agent</Link>
           <span className="text-grey-700">|</span>
           <Link href="/agents/media-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">Media Agent →</Link>
+          <span className="text-grey-700">|</span>
+          <Link href="/agents/website-agent" className="text-[11px] text-grey-500 hover:text-accent-400 transition-colors">Website Agent →</Link>
         </div>
       </div>
     </section>

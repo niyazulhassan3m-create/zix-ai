@@ -36,6 +36,13 @@ const agents = [
     img: "https://images.unsplash.com/photo-1558478551-1a378f63328e?w=200&q=80&auto=format&fit=crop",
     features: ["Image generation", "Video creation", "Logo & brand assets", "Social media posters", "AI influencer avatars", "Batch generation"],
   },
+  {
+    title: "Website Developing",
+    tagline: "AI-Powered Fast-Turnaround Websites",
+    desc: "Get a fully functional, modern website built in days — not weeks. AI generates layout, content, and styling based on your business profile. Fully customizable, responsive, and SEO-optimized.",
+    img: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=200&q=80&auto=format&fit=crop",
+    features: ["AI-generated layouts", "Responsive design", "SEO optimization", "Content generation", "Contact forms & CTAs", "Fast turnaround (3-5 days)"],
+  },
 ];
 
 export default function Services() {
@@ -50,8 +57,8 @@ export default function Services() {
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
               AI Agents for Every Business Need
             </h1>
-            <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-              Five specialized AI agents that work together — from chatbots to voice calls, analytics to content creation.
+             <p className="text-grey-400 text-lg max-w-2xl mx-auto">
+              Six specialized AI services — from chatbots to voice calls, analytics to website development.
             </p>
           </div>
 

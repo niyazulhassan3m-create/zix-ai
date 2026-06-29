@@ -6,6 +6,7 @@ const agents = [
   { href: "/agents/testing-agent", title: "Testing Agent", desc: "AI-powered QA automation & test generation", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=150&q=80&auto=format&fit=crop", color: "from-yellow-900/30" },
   { href: "/agents/analytics-agent", title: "Analytics Agent", desc: "Ad analytics, ROI tracking & performance insights", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=150&q=80&auto=format&fit=crop", color: "from-red-900/30" },
   { href: "/agents/media-agent", title: "Media Agent", desc: "AI content & image generation for marketing", img: "https://images.unsplash.com/photo-1558478551-1a378f63328e?w=150&q=80&auto=format&fit=crop", color: "from-pink-900/30" },
+  { href: "/agents/website-agent", title: "Website Agent", desc: "AI-powered fast-turnaround website development", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=150&q=80&auto=format&fit=crop", color: "from-purple-900/30" },
 ];
 
 export default function AgentsPage() {
@@ -15,7 +16,7 @@ export default function AgentsPage() {
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">AI Agents</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Five Agents. One Platform.</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Six Agents. One Platform.</h1>
           <p className="text-grey-400 text-lg max-w-2xl mx-auto">
             From chatbots to voice calls, analytics to content — deploy AI agents that work as a team.
           </p>
