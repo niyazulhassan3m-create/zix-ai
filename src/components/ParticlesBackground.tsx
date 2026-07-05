@@ -2,18 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-interface Star {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  r: number;
-  baseA: number;
-  targetA: number;
-  twinkleSpeed: number;
-  twinklePhase: number;
-  glow: number;
-}
+const COLORS = [
+  [123, 30, 45],   // #7B1E2D deep maroon
+  [155, 45, 62],   // #9B2D3E maroon
+  [200, 74, 74],   // #c84a4a warm amber
+  [224, 112, 112], // #e07070 light ember
+];
 
 export default function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -30,97 +24,95 @@ export default function ParticlesBackground() {
     canvas.width = w;
     canvas.height = h;
 
-    const count = Math.min(80, Math.floor((w * h) / 16000));
-    const stars: Star[] = Array.from({ length: count }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.15,
-      vy: (Math.random() - 0.5) * 0.15,
-      r: Math.random() * 2 + 0.3,
-      baseA: Math.random() * 0.5 + 0.15,
-      targetA: 1,
-      twinkleSpeed: Math.random() * 0.02 + 0.005,
-      twinklePhase: Math.random() * Math.PI * 2,
-      glow: Math.random() > 0.7 ? Math.random() * 12 + 4 : 0,
-    }));
+    const mouse = { x: -9999, y: -9999 };
 
-    let time = 0;
+    const count = Math.min(50, Math.floor((w * h) / 30000));
+    const particles = Array.from({ length: count }, () => {
+      const ci = Math.floor(Math.random() * COLORS.length);
+      return {
+        x: Math.random() * w,
+        y: Math.random() * h + h,
+        vy: -(Math.random() * 0.25 + 0.08),
+        vx: (Math.random() - 0.5) * 0.15,
+        r: Math.random() * 2.5 + 1.0,
+        glowR: Math.random() * 12 + 6,
+        color: COLORS[ci],
+        phase: Math.random() * Math.PI * 2,
+        pulseSpeed: Math.random() * 0.02 + 0.008,
+        wobbleAmp: Math.random() * 0.3 + 0.1,
+        wobbleSpeed: Math.random() * 0.01 + 0.005,
+        wobbleOffset: Math.random() * Math.PI * 2,
+        baseA: Math.random() * 0.4 + 0.2,
+      };
+    });
 
     const draw = () => {
-      time++;
       ctx.clearRect(0, 0, w, h);
 
-      // Draw connections first (under stars)
-      const connectDist = 120;
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i + 1; j < stars.length; j++) {
-          const dx = stars[i].x - stars[j].x;
-          const dy = stars[i].y - stars[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < connectDist) {
-            const alpha = (1 - dist / connectDist) * 0.2;
-            ctx.beginPath();
-            ctx.moveTo(stars[i].x, stars[i].y);
-            ctx.lineTo(stars[j].x, stars[j].y);
-            ctx.strokeStyle = `rgba(155, 45, 62, ${alpha})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
+      for (const p of particles) {
+        p.y += p.vy;
+        p.x += p.vx + Math.sin(Date.now() * p.wobbleSpeed + p.wobbleOffset) * p.wobbleAmp;
+
+        if (p.y + p.glowR < 0) {
+          p.y = h + p.glowR;
+          p.x = Math.random() * w;
         }
-      }
+        if (p.x < -p.glowR) p.x = w + p.glowR;
+        if (p.x > w + p.glowR) p.x = -p.glowR;
 
-      for (const s of stars) {
-        // Twinkle
-        s.targetA =
-          s.baseA +
-          Math.sin(time * s.twinkleSpeed + s.twinklePhase) * s.baseA * 0.6;
-
-        // Drift
-        s.x += s.vx;
-        s.y += s.vy;
-        if (s.x < 0) s.x = w;
-        if (s.x > w) s.x = 0;
-        if (s.y < 0) s.y = h;
-        if (s.y > h) s.y = 0;
-
-        // Glow
-        if (s.glow > 0) {
-          const grad = ctx.createRadialGradient(
-            s.x,
-            s.y,
-            0,
-            s.x,
-            s.y,
-            s.glow
-          );
-          grad.addColorStop(0, `rgba(200, 74, 74, ${s.targetA * 0.15})`);
-          grad.addColorStop(1, "rgba(200, 74, 74, 0)");
-          ctx.fillStyle = grad;
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.glow, 0, Math.PI * 2);
-          ctx.fill();
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          const force = (120 - dist) / 120;
+          p.x += (dx / dist) * force * 1.2;
+          p.y += (dy / dist) * force * 1.2;
         }
 
-        // Star dot
+        const pulse = Math.sin(Date.now() * p.pulseSpeed + p.phase) * 0.3 + 0.7;
+        const alpha = p.baseA * pulse * 0.8;
+
+        const [cr, cg, cb] = p.color;
+
+        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.glowR);
+        grd.addColorStop(0, `rgba(${cr}, ${cg}, ${cb}, ${alpha * 0.6})`);
+        grd.addColorStop(0.3, `rgba(${cr}, ${cg}, ${cb}, ${alpha * 0.2})`);
+        grd.addColorStop(1, `rgba(${cr}, ${cg}, ${cb}, 0)`);
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200, 74, 74, ${s.targetA})`;
+        ctx.arc(p.x, p.y, p.glowR, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cr}, ${cg}, ${cb}, ${alpha})`;
         ctx.fill();
       }
-
       animId = requestAnimationFrame(draw);
     };
     draw();
 
+    const onMouse = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    const onLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
     const onResize = () => {
       w = window.innerWidth;
       h = window.innerHeight;
       canvas.width = w;
       canvas.height = h;
     };
+    window.addEventListener("mousemove", onMouse);
+    window.addEventListener("mouseleave", onLeave);
     window.addEventListener("resize", onResize);
     return () => {
       cancelAnimationFrame(animId);
+      window.removeEventListener("mousemove", onMouse);
+      window.removeEventListener("mouseleave", onLeave);
       window.removeEventListener("resize", onResize);
     };
   }, []);
