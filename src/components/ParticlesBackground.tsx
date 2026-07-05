@@ -2,6 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
+interface Dot {
+  size: number;
+  brightness: number;
+}
+
+interface HelixPair {
+  t: number;
+  speed: number;
+  a: Dot;
+  b: Dot;
+}
+
 export default function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -12,119 +24,95 @@ export default function ParticlesBackground() {
     if (!ctx) return;
 
     let animId: number;
-    let w = window.innerWidth;
-    let h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
+    let W = window.innerWidth;
+    let H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
 
-    const cx = w / 2;
-    const cy = h / 2;
-    const radius = Math.min(w, h) * 0.1;
-    const helixH = h * 0.7;
-    const turns = 3;
-    const count = 60;
+    const cx = W / 2;
+    const R = Math.min(W, H) * 0.13;
+    const helixSpan = H * 0.85;
+    const count = 30;
 
-    type Node = { angle: number; y: number; strand: number; index: number; phase: number };
-
-    const nodes: Node[] = [];
-    for (let i = 0; i < count; i++) {
-      const t = i / count;
-      const angle = t * Math.PI * 2 * turns;
-      const y = (t - 0.5) * helixH;
-      nodes.push({ angle, y, strand: 0, index: i, phase: Math.random() * Math.PI * 2 });
-      nodes.push({ angle: angle + Math.PI, y, strand: 1, index: i, phase: Math.random() * Math.PI * 2 });
-    }
-
-    const ambient = Array.from({ length: 30 }, () => ({
-      x: Math.random() * w, y: Math.random() * h,
-      r: Math.random() * 1.5 + 0.5, a: Math.random() * 0.3 + 0.05,
-      vx: (Math.random() - 0.5) * 0.15, vy: (Math.random() - 0.5) * 0.15,
-      phase: Math.random() * Math.PI * 2,
+    const pairs: HelixPair[] = Array.from({ length: count }, (_, i) => ({
+      t: i / count,
+      speed: 0.15 + Math.random() * 0.05,
+      a: { size: 1.2 + Math.random() * 1.8, brightness: 0.3 + Math.random() * 0.5 },
+      b: { size: 1.2 + Math.random() * 1.8, brightness: 0.3 + Math.random() * 0.5 },
     }));
 
-    let time = 0;
+    let angle = 0;
+
+    const toY = (t: number) => (H - helixSpan) / 2 + t * helixSpan;
+    const toPos = (t: number, phase: number) => {
+      const theta = t * Math.PI * 4 + phase + angle;
+      return {
+        x: cx + Math.cos(theta) * R,
+        z: Math.sin(theta) * R,
+        y: toY(t),
+      };
+    };
 
     const draw = () => {
-      time += 0.02;
-      ctx.clearRect(0, 0, w, h);
+      ctx.clearRect(0, 0, W, H);
 
-      const cosR = Math.cos(time * 0.3);
-      const sinR = Math.sin(time * 0.3);
+      const active = pairs.filter((p) => p.t > 0.001 && p.t < 0.999);
 
-      const proj: { px: number; py: number; scale: number; strand: number; index: number; phase: number }[] = [];
+      for (const pair of active) {
+        for (const phase of [0, Math.PI] as const) {
+          const dot = phase === 0 ? pair.a : pair.b;
+          const pos = toPos(pair.t, phase);
+          const depthNorm = (pos.z / R + 1) / 2;
+          const depthAlpha = 0.25 + depthNorm * 0.55;
+          const scale = 0.5 + depthNorm * 0.5;
 
-      for (const n of nodes) {
-        const rx = Math.cos(n.angle) * radius;
-        const rz = Math.sin(n.angle) * radius;
-        const px = cx + rx * cosR - rz * sinR;
-        const py = cy + n.y;
-        const scale = ((rx * sinR + rz * cosR) + radius) / (radius * 2);
-        proj.push({ px, py, scale, strand: n.strand, index: n.index, phase: n.phase });
-      }
-
-      for (let s = 0; s < 2; s++) {
-        for (let i = 0; i < count - 1; i++) {
-          const a = proj[i * 2 + s];
-          const b = proj[(i + 1) * 2 + s];
-          const avg = (a.scale + b.scale) / 2;
           ctx.beginPath();
-          ctx.moveTo(a.px, a.py);
-          ctx.lineTo(b.px, b.py);
-          ctx.strokeStyle = `rgba(155, 45, 62, ${avg * 0.2})`;
-          ctx.lineWidth = Math.max(0.3, avg * 1.2);
-          ctx.stroke();
-        }
-      }
+          ctx.arc(pos.x, pos.y, dot.size * scale, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(200, 74, 74, ${dot.brightness * depthAlpha * 0.5})`;
+          ctx.fill();
 
-      for (let i = 0; i < count; i++) {
-        const a = proj[i * 2];
-        const b = proj[i * 2 + 1];
-        const avg = (a.scale + b.scale) / 2;
-        ctx.beginPath();
-        ctx.moveTo(a.px, a.py);
-        ctx.lineTo(b.px, b.py);
-        ctx.strokeStyle = `rgba(200, 74, 74, ${avg * 0.12})`;
-        ctx.lineWidth = Math.max(0.3, avg);
-        ctx.stroke();
-      }
-
-      proj.sort((a, b) => a.scale - b.scale);
-      for (const p of proj) {
-        const pulse = (Math.sin(time * 2 + p.phase) + 1) / 2;
-        const size = 1.5 + p.scale * 2 + pulse * 0.5;
-        const alpha = 0.15 + p.scale * 0.45;
-        ctx.beginPath();
-        ctx.arc(p.px, p.py, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(224, 112, 112, ${alpha})`;
-        ctx.fill();
-        if (p.scale > 0.6 && pulse > 0.7) {
           ctx.beginPath();
-          ctx.arc(p.px, p.py, size * 3, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(224, 112, 112, ${alpha * 0.15 * pulse})`;
+          ctx.arc(pos.x, pos.y, dot.size * scale * 0.4, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(240, 160, 160, ${dot.brightness * depthAlpha * 0.3})`;
           ctx.fill();
         }
       }
 
-      for (const p of ambient) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = w;
-        if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h;
-        if (p.y > h) p.y = 0;
-        const pa = (Math.sin(time + p.phase) + 1) / 2;
+      for (const pair of active) {
+        const posA = toPos(pair.t, 0);
+        const posB = toPos(pair.t, Math.PI);
+        const depthA = (posA.z / R + 1) / 2;
+        const depthB = (posB.z / R + 1) / 2;
+        const depthAvg = (depthA + depthB) / 2;
+
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200, 74, 74, ${p.a * (0.3 + pa * 0.7)})`;
-        ctx.fill();
+        ctx.moveTo(posA.x, posA.y);
+        ctx.lineTo(posB.x, posB.y);
+        ctx.strokeStyle = `rgba(200, 74, 74, ${0.04 + depthAvg * 0.08})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      angle += 0.004;
+      for (const p of pairs) {
+        p.t += p.speed * 0.002;
+        if (p.t > 1) {
+          p.t -= 1;
+          p.a = { size: 1.2 + Math.random() * 1.8, brightness: 0.3 + Math.random() * 0.5 };
+          p.b = { size: 1.2 + Math.random() * 1.8, brightness: 0.3 + Math.random() * 0.5 };
+        }
       }
 
       animId = requestAnimationFrame(draw);
     };
+
     draw();
 
     const onResize = () => {
-      w = window.innerWidth; h = window.innerHeight;
-      canvas.width = w; canvas.height = h;
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
     };
     window.addEventListener("resize", onResize);
     return () => {
@@ -137,7 +125,7 @@ export default function ParticlesBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.55 }}
+      style={{ opacity: 0.6 }}
     />
   );
 }
