@@ -27,12 +27,12 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Lab-Y AI Solutions | B2B AI Products & SaaS",
+  title: "Lab Y AI Solutions | AI Agents & Custom Web Development",
   description:
-    "Lab-Y delivers enterprise-grade SaaS, Micro SaaS, AI voice agents, and AI-integrated CRMs to transform your business operations.",
+    "Lab Y delivers 6 specialized AI services — Text, Voice, Testing, Analytics, Media agents, and AI-integrated Website Development — to transform your business with Tanglish-powered automation.",
   openGraph: {
-    title: "Lab-Y AI Solutions",
-    description: "Enterprise AI products & SaaS for B2B businesses.",
+    title: "Lab Y AI Solutions",
+    description: "AI agents & custom website development with Tanglish support.",
   },
 };
 

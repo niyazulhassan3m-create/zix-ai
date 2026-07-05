@@ -168,7 +168,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
               <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">The Agent Team</p>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">One Platform. Five AI Agents.</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">One Platform. Six AI Agents.</h2>
               <p className="text-grey-400 text-lg max-w-2xl mx-auto">From customer conversations to content creation — all powered by AI with Tanglish support.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-6 max-w-[940px] mx-auto">
