@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "@/components/Logo";
+
 
 const footerLinks = [
   { href: "/", label: "Home" },
@@ -14,9 +14,6 @@ export default function Footer() {
     <footer className="border-t border-white/5 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-          <Link href="/" className="flex items-center">
-            <div style={{ height: 14 }}><Logo className="w-auto" /></div>
-          </Link>
           <div className="flex items-center gap-6">
             {footerLinks.map((l) => (
               <Link
