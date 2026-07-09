@@ -21,10 +21,6 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
-        <Link href="/" className="flex items-center">
-          <div style={{ height: 14 }}><Logo className="w-auto" /></div>
-        </Link>
-
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => {
             const isActive = pathname === l.href;
@@ -44,25 +40,31 @@ export default function Header() {
           })}
         </div>
 
-        <Link
-          href="/contact"
-          className="hidden md:inline-flex px-5 py-2 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-accent-500 transition-all"
-        >
-          Get Started
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="hidden md:inline-flex px-5 py-2 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-accent-500 transition-all"
+          >
+            Get Started
+          </Link>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-grey-400"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {open ? (
-              <path strokeLinecap="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+          <Link href="/" className="flex items-center">
+            <div style={{ height: 14 }}><Logo className="w-auto" /></div>
+          </Link>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden p-2 text-grey-400"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {open ? (
+                <path strokeLinecap="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       {open && (
