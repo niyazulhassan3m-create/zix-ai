@@ -68,7 +68,7 @@ export default function MediaAgentPage() {
               <img src={image} alt="Generated content" className="w-full h-auto" />
               <div className="p-3 bg-white/5 flex justify-between items-center">
                 <span className="text-[10px] text-grey-500">AI-generated preview ({format})</span>
-                <button onClick={() => { const a = document.createElement("a"); a.href = image; a.download = `lab-y-${format}.png`; a.click(); }} className="text-[10px] text-accent-400 hover:underline">Download</button>
+                <button onClick={() => { const a = document.createElement("a"); a.href = image; a.download = `zix-${format}.png`; a.click(); }} className="text-[10px] text-accent-400 hover:underline">Download</button>
               </div>
             </div>
           )}

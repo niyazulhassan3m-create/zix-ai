@@ -115,7 +115,7 @@ export default function VoiceAgent() {
       if (!reply || reply.startsWith("⚠️")) {
         const q = text.toLowerCase();
         if (q.includes("pric") || q.includes("cost")) reply = "Start plan ₹2,100/mo, Growth ₹4,200/mo, Professional ₹8,400/mo. 14-day free trial!";
-        else if (q.includes("demo") || q.includes("book")) reply = "Demo book panna lab-y-ai.vercel.app/contact ku ponga!";
+        else if (q.includes("demo") || q.includes("book")) reply = "Demo book panna zix-ai.solutions/contact ku ponga!";
         else if (q.includes("voice") || q.includes("call")) reply = "Voice Agent real phone calls handle pannum Tanglish la. Vapi technology use pannrom!";
         else if (q.includes("text") || q.includes("chat")) reply = "Text Agent websites, WhatsApp, Instagram, Facebook la 24/7 lead capture pannum!";
         else if (q.includes("service") || q.includes("product")) reply = "6 AI Services: Text, Voice, Testing, Analytics, Media, Website Developing. Entha service pathi ketunga!";

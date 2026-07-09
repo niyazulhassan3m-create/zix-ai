@@ -7,7 +7,7 @@ function fallbackReply(msg: string): string {
   const q = msg.toLowerCase();
   if (q.includes("hi") || q.includes("vanakkam") || q.includes("hello") || q.includes("hey")) return "Vanakkam! Naan Yara, ZiX AI Solutions la AI agent. Ungaluku eppadi help pannanum? Products, pricing, demo — edhavadhu ketunga!";
   if (q.includes("pric") || q.includes("cost") || q.includes("rate") || q.includes("vila") || q.includes("fee")) return "Our pricing: Starter ₹2,100/mo, Growth ₹4,200/mo, Professional ₹8,400/mo. Enterprise plan custom. 14-day free trial available!";
-  if (q.includes("demo") || q.includes("book") || q.includes("meeting")) return "Sure! Demo book panna lab-y-ai.vercel.app/contact ku ponga. Atho illa namma sales team ping pannala?";
+  if (q.includes("demo") || q.includes("book") || q.includes("meeting")) return "Sure! Demo book panna zix-ai.solutions/contact ku ponga. Atho illa namma sales team ping pannala?";
   if (q.includes("service") || q.includes("product") || q.includes("offer") || q.includes("enna") || q.includes("solution")) return "We have 6 AI Services:\n🔹 Text Agent — Chatbots for websites & social media\n🔹 Voice Agent — Real phone calls in Tanglish\n🔹 Testing Agent — Automated QA\n🔹 Analytics Agent — Call insights & sentiment\n🔹 Media Agent — AI content generation\n🔹 AI Integrated Website Developing — Custom websites with AI features\n\nEthula ungaluku interest?";
   if (q.includes("voice") || q.includes("call") || q.includes("phone")) return "Our Voice Agent handles real phone calls using Vapi technology. It answers in Tanglish, captures leads, transfers to humans. Browser la um test pannalam!";
   if (q.includes("text") || q.includes("chat") || q.includes("bot") || q.includes("whatsapp")) return "Text Agent websites, WhatsApp, Instagram, Facebook la integrate aagum. 24/7 Tanglish la lead capture pannum. Unga website la ready!";
@@ -15,8 +15,8 @@ function fallbackReply(msg: string): string {
   if (q.includes("media") || q.includes("image") || q.includes("video") || q.includes("content") || q.includes("poster")) return "Media Agent generates marketing visuals, social media posts, logos, videos from text prompts. AI-powered content creation!";
   if (q.includes("test") || q.includes("qa")) return "Testing Agent automates QA — AI test generation, cross-browser testing, visual regression, bug reporting. QA time 80% reduce pannum!";
   if (q.includes("website") || q.includes("site") || q.includes("web") || q.includes("landing")) return "Website Developing — naama ungaluku custom AI-integrated website build panni kuduppom. Unga business describe panna, full site AI features with modern design la deliver pannuvom!";
-  if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("phone")) return "Contact us at hello@lab-y.ai or visit lab-y-ai.vercel.app/contact. Quick demo book pannalam!";
-  if (q.includes("trial") || q.includes("free") || q.includes("start") || q.includes("begin")) return "14-day free trial on all plans! No credit card needed. Start panna lab-y-ai.vercel.app/contact la reach out pannunga!";
+  if (q.includes("contact") || q.includes("email") || q.includes("reach") || q.includes("phone")) return "Contact us at hello@zix-ai.solutions or visit zix-ai.solutions/contact. Quick demo book pannalam!";
+  if (q.includes("trial") || q.includes("free") || q.includes("start") || q.includes("begin")) return "14-day free trial on all plans! No credit card needed. Start panna zix-ai.solutions/contact la reach out pannunga!";
   if (q.includes("bye") || q.includes("thanks") || q.includes("thank") || q.includes("nandri") || q.includes("okay")) return "Romba nandri! Ungaluku help panna mudinja santhosham. Demo book pannanum na contact page la reach out pannunga. Goodbye!";
   return "Sorry, konjam clarify pannunga! Products, pricing, demo — edhavadhu specifically ketunga, naan help pannren!";
 }

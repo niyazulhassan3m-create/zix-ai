@@ -52,7 +52,7 @@ export default function WebsiteBuilderDemo() {
                 <div className="w-3 h-3 rounded-full bg-green-500/50" />
               </div>
               <div className="flex-1 text-center">
-                <span className="text-[10px] text-grey-600 bg-white/5 px-3 py-1 rounded-full">{business?.toLowerCase().replace(/\s+/g, "-") || "your-business"}.lab-y.ai</span>
+                <span className="text-[10px] text-grey-600 bg-white/5 px-3 py-1 rounded-full">{business?.toLowerCase().replace(/\s+/g, "-") || "your-business"}.zix-ai.solutions</span>
               </div>
             </div>
 

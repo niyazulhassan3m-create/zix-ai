@@ -12,7 +12,7 @@ const responses: Record<string, string> = {
   demo:
     "I'd love to show you a demo! We have interactive demos for all 6 AI services. Head to our Demos page or let me know which one you'd like to see!",
   contact:
-    "You can reach us at hello@lab-y.ai or use the Contact form on our site. We typically respond within 24 hours! 📬",
+    "You can reach us at hello@zix-ai.solutions or use the Contact form on our site. We typically respond within 24 hours! 📬",
   voice:
     "Our AI Voice Agents handle sales calls, customer support, and scheduling with human-like conversation in Tanglish. Supports Vapi real phone calls and browser voice! 🎙️",
   analytics:

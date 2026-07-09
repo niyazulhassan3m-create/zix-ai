@@ -117,7 +117,7 @@ export default function Contact() {
                 <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">
                   Email
                 </p>
-                <p className="text-sm text-grey-300">hello@lab-y.ai</p>
+                <p className="text-sm text-grey-300">hello@zix-ai.solutions</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-card p-6">
                 <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">
