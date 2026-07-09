@@ -7,6 +7,7 @@ export default function Logo({ className = "h-16 w-auto" }: { className?: string
         src="/LogoX.png"
         alt="ZiX AI Solutions"
         className="h-full w-auto object-contain"
+        style={{ mixBlendMode: "multiply" }}
       />
     </Link>
   );
