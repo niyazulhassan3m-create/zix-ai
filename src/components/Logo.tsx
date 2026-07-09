@@ -7,7 +7,7 @@ export default function Logo({ className }: { className?: string }) {
         src="/LogoX.png"
         alt="ZiX AI Solutions"
         className="h-full w-auto object-contain"
-        style={{ mixBlendMode: "multiply" }}
+        style={{ mixBlendMode: "multiply", filter: "brightness(1.4) saturate(1.3)" }}
       />
     </Link>
   );
