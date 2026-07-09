@@ -9,7 +9,7 @@ export default function Logo({ className }: { className?: string }) {
         className="h-full w-auto object-contain"
         style={{
           filter:
-            "brightness(1.25) saturate(1.4) drop-shadow(0 0 8px rgba(200,74,74,0.25))",
+            "brightness(1.6) saturate(1.6) contrast(1.3) drop-shadow(0 0 12px rgba(200,74,74,0.4))",
         }}
       />
     </Link>
