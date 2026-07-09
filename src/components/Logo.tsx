@@ -4,10 +4,13 @@ export default function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={`flex items-center ${className || "h-10"}`}>
       <img
-        src="/LogoX.png"
+        src="/LogoX-transparent.png"
         alt="ZiX AI Solutions"
         className="h-full w-auto object-contain"
-        style={{ mixBlendMode: "multiply", filter: "brightness(1.4) saturate(1.3)" }}
+        style={{
+          filter:
+            "brightness(1.25) saturate(1.4) drop-shadow(0 0 8px rgba(200,74,74,0.25))",
+        }}
       />
     </Link>
   );
