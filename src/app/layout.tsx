@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
 const cassannetPlus = localFont({
@@ -27,12 +26,12 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "ZiX AI Solutions | AI Agents & Custom Web Development",
+  title: "ZiX AI Solutions & Studios | AI Film Making & Website Development",
   description:
-    "ZiX AI Solutions delivers 6 specialized AI services — Text, Voice, Testing, Analytics, Media agents, and AI-integrated Website Development — to transform your business with Tanglish-powered automation.",
+    "ZiX AI Solutions & Studios — AI-powered film making, ad filming, personal portfolio films, and custom website development.",
   openGraph: {
-    title: "ZiX AI Solutions",
-    description: "AI agents & custom website development with Tanglish support.",
+    title: "ZiX AI Solutions & Studios",
+    description: "AI Film Making, Ad Filming, Portfolio Films & Website Development.",
   },
 };
 
@@ -51,7 +50,6 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <Chatbot />
       </body>
     </html>
   );

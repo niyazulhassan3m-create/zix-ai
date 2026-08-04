@@ -45,11 +45,11 @@ export default function Contact() {
               Get in Touch
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Let&apos;s Build Something
+              Let&apos;s Create Something
             </h1>
             <p className="text-grey-400 text-lg max-w-xl mx-auto">
-              Tell us about your business needs and we&apos;ll craft the
-              perfect AI solution.
+              Tell us about your project and we&apos;ll craft the
+              perfect AI production plan.
             </p>
           </div>
 
@@ -89,10 +89,10 @@ export default function Contact() {
                   className="w-full px-4 py-3 rounded-xl border border-white/5 bg-card text-grey-400 focus:outline-none focus:border-accent-600/30 focus:ring-1 focus:ring-accent-600/10 transition text-sm"
                 >
                   <option value="">I&apos;m interested in...</option>
-                  <option value="saas">Enterprise SaaS</option>
-                  <option value="micro-saas">Micro SaaS</option>
-                  <option value="voice">AI Voice Agents</option>
-                  <option value="crm">AI-Integrated CRM</option>
+                  <option value="film">AI Film Making</option>
+                  <option value="ad">AI Ad Filming</option>
+                  <option value="portfolio">Personal AI Portfolio</option>
+                  <option value="website">Website Developing</option>
                   <option value="other">Other</option>
                 </select>
                 <textarea

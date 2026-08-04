@@ -1,10 +1,8 @@
 import Link from "next/link";
 
-
 const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/demos", label: "Demos" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ];
@@ -28,7 +26,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5">
           <p className="text-[11px] text-grey-600">
-            &copy; {new Date().getFullYear()} ZiX AI Solutions. All rights reserved.
+            &copy; {new Date().getFullYear()} ZiX AI Solutions & Studios. All rights reserved.
           </p>
           <div className="flex items-center gap-5 text-[11px] text-grey-600">
             <span className="hover:text-accent-400 transition-colors cursor-pointer">hello@zix-ai.solutions</span>

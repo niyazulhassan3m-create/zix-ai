@@ -5,15 +5,14 @@ const plans = [
     name: "Starter",
     price: "0000",
     period: "",
-    desc: "Perfect for small businesses getting started with AI.",
+    desc: "Perfect for individuals and small projects.",
     features: [
-      { text: "Text Agent (Chat)", detail: "One Chatbot • Custom Text Agent • Max 50 pages • 10K conversations" },
-      { text: "Voice (Call) Agent", detail: "10 calls/day • Max 100 calls/month • Outbound Calling" },
-      { text: "Analytics Agent", detail: "25 AI reports/month • Basic analytics & insights" },
-      { text: "Media Agent", detail: "100 images/month • Max 10/day • 2 videos (up to 5s)" },
-      { text: "Website Developing", detail: "AI-integrated custom website — 1 site • Fast turnaround" },
+      { text: "AI Film Making", detail: "1 short film (up to 5 min) • Script + Storyboard" },
+      { text: "AI Ad Filming", detail: "2 ad creatives (15-30s) • Social media ready" },
+      { text: "Personal Portfolio", detail: "1 demo reel (up to 2 min) • Basic editing" },
+      { text: "Website Developing", detail: "1 AI-integrated website • Responsive design" },
       { text: "Email support", detail: "" },
-      { text: "Projects", detail: "One Project" },
+      { text: "Revisions", detail: "2 rounds of revisions per project" },
     ],
     cta: "Get Started",
     featured: false,
@@ -22,15 +21,14 @@ const plans = [
     name: "Growth",
     price: "0000",
     period: "",
-    desc: "Perfect for growing businesses scaling their AI use.",
+    desc: "For growing brands and businesses.",
     features: [
-      { text: "Text Agent (Chat)", detail: "Two Chatbots • Custom Text Agent • Max 100 pages • 20K conversations" },
-      { text: "Voice (Call) Agent", detail: "30 calls/day • Max 200 calls/month • Outbound Calling" },
-      { text: "Analytics Agent", detail: "50 AI reports/month • Conversion & performance insights" },
-      { text: "Media Agent", detail: "200 images/month • Max 20/day • 10 videos (up to 5s)" },
-      { text: "Website Developing", detail: "AI-integrated custom website — 1 site • Custom domain ready" },
-      { text: "Priority Email support", detail: "" },
-      { text: "Projects", detail: "One Project" },
+      { text: "AI Film Making", detail: "3 films (up to 10 min each) • Advanced VFX" },
+      { text: "AI Ad Filming", detail: "8 ad creatives (15-60s) • Multi-platform formats" },
+      { text: "Personal Portfolio", detail: "3 portfolio films • Custom branding" },
+      { text: "Website Developing", detail: "2 AI-integrated websites • Custom domain" },
+      { text: "Priority support", detail: "" },
+      { text: "Revisions", detail: "4 rounds of revisions per project" },
     ],
     cta: "Get Started",
     featured: true,
@@ -39,15 +37,14 @@ const plans = [
     name: "Professional",
     price: "0000",
     period: "",
-    desc: "For scaling businesses with advanced AI needs.",
+    desc: "Full-scale production for serious brands.",
     features: [
-      { text: "Text Agent (Chat)", detail: "Multiple Chatbots • Custom Text, Voice-ready • Max 200 pages • 40K conversations" },
-      { text: "Voice (Call) Agent", detail: "50 calls/day • Max 500 calls/month • Outbound Calling" },
-      { text: "Analytics Agent", detail: "100 AI reports/month • Advanced analytics & insights" },
-      { text: "Media Agent", detail: "400 images/month • Max 50/day • 20 videos (up to 5s)" },
-      { text: "Website Developing", detail: "AI-integrated custom websites — 3 sites • Custom domain • SEO" },
+      { text: "AI Film Making", detail: "Unlimited films • Feature-length capable" },
+      { text: "AI Ad Filming", detail: "Unlimited ads • TV commercial grade" },
+      { text: "Personal Portfolio", detail: "Unlimited portfolio films • Premium quality" },
+      { text: "Website Developing", detail: "Unlimited websites • Custom domain • SEO" },
       { text: "Priority & WhatsApp support", detail: "" },
-      { text: "Projects", detail: "Multiple Projects" },
+      { text: "Revisions", detail: "Unlimited revisions" },
     ],
     cta: "Get Started",
     featured: false,
@@ -64,7 +61,7 @@ export default function Pricing() {
             <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Simple Pricing</p>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">Choose Your Plan</h1>
             <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-              Flexible pricing options to fit businesses of all sizes. No hidden fees. 14-day free trial on all plans.
+              Flexible pricing for filmmakers, brands, and businesses. No hidden fees.
             </p>
           </div>
 
@@ -122,9 +119,9 @@ export default function Pricing() {
           <div className="max-w-5xl mx-auto mt-8">
             <div className="rounded-2xl border border-white/5 bg-gradient-to-br from-accent-900/30 to-card p-8 md:p-12 text-center">
               <h2 className="text-2xl font-bold mb-4">Enterprise</h2>
-              <p className="text-grey-400 mb-2">Custom pricing for large organizations.</p>
+              <p className="text-grey-400 mb-2">Custom pricing for production houses and agencies.</p>
               <p className="text-sm text-grey-500 mb-6">
-                All agents included • Unlimited calls & reports • Testing Agent • 24/7 dedicated support
+                All services included • Unlimited projects • Dedicated production team • 24/7 priority support
               </p>
               <Link href="/contact" className="inline-flex px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-accent-500 transition-all">
                 Contact Sales
