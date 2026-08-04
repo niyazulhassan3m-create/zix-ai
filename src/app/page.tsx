@@ -7,9 +7,9 @@ import GlassCard from "@/components/GlassCard";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const services = [
-  { emoji: "🎬", title: "AI Film Making", desc: "Full-length AI-powered films, short films, and concept films with cinematic quality", href: "/services" },
-  { emoji: "📢", title: "AI Ad Filming", desc: "Commercials, brand advertisements, and social media ad campaigns", href: "/services" },
-  { emoji: "🎭", title: "Personal AI Portfolio", desc: "Portfolio films, demo reels, and personal branding videos", href: "/services" },
+  { emoji: "🎬", title: "AI Films", desc: "Full-length movies and short films created using cutting-edge AI filmmaking tools", href: "/services" },
+  { emoji: "📢", title: "Ad Commercials", desc: "High-impact brand ads and commercial films produced with AI", href: "/services" },
+  { emoji: "🎭", title: "Short Films", desc: "Creative short films and storytelling projects powered by AI tools", href: "/services" },
   { emoji: "🌐", title: "Website Developing", desc: "AI-integrated custom website development — we build for you", href: "/services" },
 ];
 
@@ -23,9 +23,9 @@ const fadeUp = {
 };
 
 const steps = [
-  { num: "01", title: "Share Your Vision", desc: "Tell us your story, brand, or idea — our AI understands your creative brief." },
-  { num: "02", title: "AI Creates", desc: "Our AI generates scripts, storyboards, visuals, and edits — in minutes, not months." },
-  { num: "03", title: "Deliver & Launch", desc: "Polished, production-ready films, ads, and websites — delivered fast." },
+  { num: "01", title: "Share Your Vision", desc: "Tell us your story, brand, or creative idea — we understand your brief." },
+  { num: "02", title: "We Create", desc: "Our team uses the latest AI filmmaking tools to produce scripts, visuals, and edits — fast." },
+  { num: "03", title: "Deliver & Launch", desc: "Polished, cinema-quality films, ads, and content — delivered production-ready." },
 ];
 
 export default function Home() {
@@ -43,7 +43,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-600/20 bg-accent-600/10 backdrop-blur-sm mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse" />
-              <span className="text-[10px] tracking-[0.2em] uppercase text-accent-400 font-medium">AI-Powered Production</span>
+              <span className="text-[10px] tracking-[0.2em] uppercase text-accent-400 font-medium">AI-Powered Filmmaking</span>
             </div>
           </motion.div>
 
@@ -53,9 +53,8 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
             className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            AI-Powered<br />
-            <span className="bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600 bg-clip-text text-transparent">Film Making</span><br />
-            & Digital Studios
+            We Make Films<br />
+            <span className="bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600 bg-clip-text text-transparent">Using AI Tools</span>
           </motion.h1>
 
           <motion.p
@@ -64,7 +63,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-grey-400 text-lg sm:text-xl max-w-2xl mx-auto mb-8"
           >
-            AI Films <span className="text-grey-600">•</span> Ad Filming <span className="text-grey-600">•</span> Portfolio Films <span className="text-grey-600">•</span> Website Development
+            Movies <span className="text-grey-600">•</span> Short Films <span className="text-grey-600">•</span> Ad Commercials <span className="text-grey-600">•</span> Website Development
           </motion.p>
 
           <motion.div
@@ -74,7 +73,7 @@ export default function Home() {
             className="flex items-center justify-center gap-4"
           >
             <Link href="/services" className="group relative px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 hover:bg-accent-500 animate-float">
-              <span className="relative z-10">Explore Our Services</span>
+              <span className="relative z-10">Explore Our Work</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
             </Link>
             <Link href="/contact" className="px-8 py-3.5 rounded-lg border border-white/10 text-grey-300 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-white/5 transition-all backdrop-blur-sm animate-float-delayed">
@@ -95,8 +94,8 @@ export default function Home() {
             <GlassCard className="p-8" floatDelay={0}>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 {[
-                  { value: "50+", label: "Films Produced" },
-                  { value: "200+", label: "Ads Created" },
+                  { value: "50+", label: "Films Made" },
+                  { value: "200+", label: "Ad Commercials" },
                   { value: "80+", label: "Happy Clients" },
                   { value: "24/7", label: "AI Production" },
                 ].map((s, i) => (
@@ -125,15 +124,15 @@ export default function Home() {
         <section className="relative py-28 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-accent-900/10 via-transparent to-transparent" />
           <div className="max-w-4xl mx-auto relative z-10 text-center">
-            <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Our AI Technology</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Built on Advanced AI</h2>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">Our Process</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">How We Work</h2>
             <p className="text-grey-300 text-lg max-w-2xl mx-auto mb-16">
-              Powered by cutting-edge AI models, our studio generates cinematic visuals,
-              compelling scripts, and polished edits — faster than traditional production.
+              We use the latest AI filmmaking tools — Runway, Sora, Kling, and more —
+              to produce cinema-quality films, ads, and content at unprecedented speed.
             </p>
           </div>
           <div className="max-w-[940px] mx-auto relative z-10">
-            <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 text-center mb-8">How It Works</p>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 text-center mb-8">Step by Step</p>
             <div className="grid md:grid-cols-3 gap-6">
               {steps.map((s, i) => (
                 <motion.div
@@ -166,8 +165,8 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
               <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">What We Do</p>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our AI Studio Services</h2>
-              <p className="text-grey-400 text-lg max-w-2xl mx-auto">From full-length films to ad campaigns and personal portfolios — powered by AI.</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our AI Filmmaking Services</h2>
+              <p className="text-grey-400 text-lg max-w-2xl mx-auto">We use AI tools to produce movies, short films, ad commercials, and websites — not build AI tools.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-6 max-w-[940px] mx-auto">
               {services.map((s, i) => (
@@ -205,7 +204,7 @@ export default function Home() {
               <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-4">Start Your Project</p>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Bring Your Vision to Life?</h2>
               <p className="text-grey-400 mb-8 max-w-lg mx-auto">
-                Whether it&apos;s a film, ad campaign, portfolio reel, or website — our AI studio delivers production-ready results.
+                Whether it&apos;s a film, ad campaign, short film, or website — we use the best AI tools to deliver production-ready results.
               </p>
               <div className="flex items-center justify-center gap-4">
                 <Link href="/contact" className="group relative px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 hover:bg-accent-500 animate-float">

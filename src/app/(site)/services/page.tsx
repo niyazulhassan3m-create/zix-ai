@@ -2,30 +2,30 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "AI Film Making",
-    tagline: "Full-Length AI-Powered Cinema",
-    desc: "From script to screen, our AI generates complete films — feature-length, short films, concept films, and music videos. Cinematic quality with AI efficiency.",
+    title: "AI Films",
+    tagline: "Movies & Feature Films",
+    desc: "We produce full-length movies and feature films using cutting-edge AI filmmaking tools. From script to final cut — we handle the entire production pipeline with AI.",
     img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200&q=80&auto=format&fit=crop",
-    features: ["AI script generation", "AI storyboarding", "Cinematic scene creation", "AI visual effects", "Automated editing", "Color grading & sound design"],
+    features: ["AI-assisted scriptwriting", "AI storyboarding", "AI-generated visuals & scenes", "AI visual effects", "Professional editing", "Color grading & sound design"],
   },
   {
-    title: "AI Ad Filming",
-    tagline: "Commercials & Brand Campaigns",
-    desc: "Create high-converting ad campaigns with AI. From 15-second social ads to 60-second TV commercials — produced in days, not weeks.",
+    title: "Ad Commercials",
+    tagline: "Brand Ads & Commercials",
+    desc: "We create high-impact brand advertisements and commercial films using AI tools. From 15-second social ads to 60-second TV spots — produced in days, not weeks.",
     img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=200&q=80&auto=format&fit=crop",
-    features: ["Brand ad production", "Social media ads", "Product showcases", "A/B creative testing", "Multi-platform formats", "Rapid turnaround"],
+    features: ["Brand ad production", "Social media ads", "Product showcase films", "A/B creative testing", "Multi-platform formats", "Rapid turnaround"],
   },
   {
-    title: "Personal AI Portfolio",
-    tagline: "Your Story, AI-Enhanced",
-    desc: "Build a stunning personal portfolio film or demo reel. Perfect for actors, models, athletes, entrepreneurs, and creatives who want to stand out.",
+    title: "Short Films",
+    tagline: "Creative Short-Form Content",
+    desc: "We produce creative short films and storytelling projects using AI filmmaking tools. Perfect for brands, festivals, social media, and creative portfolios.",
     img: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=200&q=80&auto=format&fit=crop",
-    features: ["Demo reel creation", "Personal branding films", "Actor/model portfolios", "LinkedIn video profiles", "AI-enhanced footage", "Social media cuts"],
+    features: ["Short film production", "Concept films", "Festival-ready content", "Social media shorts", "AI-enhanced footage", "Custom storytelling"],
   },
   {
     title: "Website Developing",
     tagline: "AI-Powered Fast-Turnaround Websites",
-    desc: "Get a fully functional, modern website built in days. AI generates layout, content, and styling based on your brand. Fully responsive and SEO-optimized.",
+    desc: "We build fully functional, modern websites using AI tools. Layout, content, and styling generated based on your brand. Fully responsive and SEO-optimized.",
     img: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=200&q=80&auto=format&fit=crop",
     features: ["AI-generated layouts", "Responsive design", "SEO optimization", "Content generation", "Contact forms & CTAs", "Fast turnaround (3-5 days)"],
   },
@@ -41,10 +41,10 @@ export default function Services() {
               Our Services
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              AI-Powered Production Services
+              We Make Films Using AI Tools
             </h1>
             <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-              Full-spectrum AI studio — from cinematic films to ad campaigns, portfolio reels, and websites.
+              Movies, short films, ad commercials, and websites — produced with the latest AI filmmaking tools.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function Services() {
             <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-4">Not Sure Where to Start?</p>
             <h2 className="text-3xl font-bold mb-6">We&apos;ll Guide You</h2>
             <p className="text-grey-400 mb-8 max-w-lg mx-auto">
-              Tell us about your project and vision — we&apos;ll recommend the best approach and deliver a tailored production plan.
+              Tell us about your project — we&apos;ll pick the right AI tools and deliver a tailored production plan.
             </p>
             <Link href="/contact" className="inline-flex px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-accent-500 transition-all">
               Contact Us
