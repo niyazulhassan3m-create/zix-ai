@@ -26,12 +26,12 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "ZiX AI Solutions & Studios | We Make Films Using AI Tools",
+  title: "ZiX AI Solutions & Studios | We Make Films Using AI",
   description:
-    "ZiX AI Solutions & Studios — We use AI filmmaking tools to produce movies, short films, ad commercials, and websites.",
+    "ZiX AI Solutions & Studios — We produce films, short films, ad commercials, and websites using cutting-edge AI tools. Fast, cinematic, affordable.",
   openGraph: {
     title: "ZiX AI Solutions & Studios",
-    description: "We make films using AI tools — movies, short films, ad commercials & websites.",
+    description: "We make films, short films, ad commercials & websites using AI.",
   },
 };
 

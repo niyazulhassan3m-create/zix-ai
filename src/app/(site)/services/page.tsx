@@ -2,30 +2,30 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "AI Films",
-    tagline: "Movies & Feature Films",
-    desc: "We produce full-length movies and feature films using cutting-edge AI filmmaking tools. From script to final cut — we handle the entire production pipeline with AI.",
+    title: "Feature Films & Short Films",
+    tagline: "Movies & Shorts Using AI",
+    desc: "We produce full-length films and short films using the latest AI tools. From scriptwriting to final edit, AI accelerates every step — giving you cinematic quality at a fraction of the traditional cost and time.",
     img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=200&q=80&auto=format&fit=crop",
-    features: ["AI-assisted scriptwriting", "AI storyboarding", "AI-generated visuals & scenes", "AI visual effects", "Professional editing", "Color grading & sound design"],
+    features: ["AI-assisted scriptwriting", "AI storyboarding & visualization", "AI-generated scenes & visuals", "Automated editing & color grading", "Sound design & mixing", "Cinematic quality delivery"],
   },
   {
-    title: "Ad Commercials",
-    tagline: "Brand Ads & Commercials",
-    desc: "We create high-impact brand advertisements and commercial films using AI tools. From 15-second social ads to 60-second TV spots — produced in days, not weeks.",
+    title: "Ad Commercials & Brand Films",
+    tagline: "High-Impact Ads Using AI",
+    desc: "We create high-converting ad commercials and brand films using AI. From 15-second social media ads to 60-second TV spots — produced in days, not weeks.",
     img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=200&q=80&auto=format&fit=crop",
-    features: ["Brand ad production", "Social media ads", "Product showcase films", "A/B creative testing", "Multi-platform formats", "Rapid turnaround"],
+    features: ["Brand ad production", "Product commercials", "Social media ad campaigns", "A/B creative testing", "Multi-platform formats", "Rapid turnaround"],
   },
   {
-    title: "Short Films",
-    tagline: "Creative Short-Form Content",
-    desc: "We produce creative short films and storytelling projects using AI filmmaking tools. Perfect for brands, festivals, social media, and creative portfolios.",
+    title: "AI-Enhanced Personal Films",
+    tagline: "Your Story, Produced Using AI",
+    desc: "We produce personal portfolio films, demo reels, and branding videos using AI tools. Perfect for actors, models, athletes, entrepreneurs, and creatives.",
     img: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=200&q=80&auto=format&fit=crop",
-    features: ["Short film production", "Concept films", "Festival-ready content", "Social media shorts", "AI-enhanced footage", "Custom storytelling"],
+    features: ["Demo reel production", "Personal branding films", "Actor/model portfolios", "LinkedIn video profiles", "AI-enhanced footage", "Social media cuts"],
   },
   {
     title: "Website Developing",
     tagline: "AI-Powered Fast-Turnaround Websites",
-    desc: "We build fully functional, modern websites using AI tools. Layout, content, and styling generated based on your brand. Fully responsive and SEO-optimized.",
+    desc: "We build fully functional, modern websites using AI tools. AI generates layout, content, and styling based on your brand. Fully responsive and SEO-optimized.",
     img: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=200&q=80&auto=format&fit=crop",
     features: ["AI-generated layouts", "Responsive design", "SEO optimization", "Content generation", "Contact forms & CTAs", "Fast turnaround (3-5 days)"],
   },
@@ -38,13 +38,13 @@ export default function Services() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">
-              Our Services
+              What We Make
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              We Make Films Using AI Tools
+              We Produce Films Using AI
             </h1>
             <p className="text-grey-400 text-lg max-w-2xl mx-auto">
-              Movies, short films, ad commercials, and websites — produced with the latest AI filmmaking tools.
+              Full-spectrum production studio — feature films, short films, ad commercials, and websites — all produced using AI tools.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function Services() {
             <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-4">Not Sure Where to Start?</p>
             <h2 className="text-3xl font-bold mb-6">We&apos;ll Guide You</h2>
             <p className="text-grey-400 mb-8 max-w-lg mx-auto">
-              Tell us about your project — we&apos;ll pick the right AI tools and deliver a tailored production plan.
+              Tell us about your project and vision — we&apos;ll recommend the best approach and deliver a tailored production plan.
             </p>
             <Link href="/contact" className="inline-flex px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-accent-500 transition-all">
               Contact Us
