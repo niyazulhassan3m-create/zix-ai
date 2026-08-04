@@ -43,7 +43,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-600/20 bg-accent-600/10 backdrop-blur-sm mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse" />
-              <span className="text-[10px] tracking-[0.2em] uppercase text-accent-400 font-medium">AI-Powered Production Studio</span>
+              <span className="text-[10px] tracking-[0.2em] uppercase text-accent-400 font-medium">AI-Powered Film Studio</span>
             </div>
           </motion.div>
 
@@ -53,8 +53,8 @@ export default function Home() {
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
             className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            We Make Films<br />
-            <span className="bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600 bg-clip-text text-transparent">Using AI</span>
+            Your Vision.<br />
+            <span className="bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600 bg-clip-text text-transparent">Our AI. Our Camera.</span>
           </motion.h1>
 
           <motion.p
@@ -63,7 +63,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-grey-400 text-lg sm:text-xl max-w-2xl mx-auto mb-8"
           >
-            Films <span className="text-grey-600">•</span> Short Films <span className="text-grey-600">•</span> Ad Commercials <span className="text-grey-600">•</span> Websites
+            Feature Films <span className="text-grey-600">•</span> Short Films <span className="text-grey-600">•</span> Ad Commercials <span className="text-grey-600">•</span> Websites
           </motion.p>
 
           <motion.div
@@ -73,7 +73,7 @@ export default function Home() {
             className="flex items-center justify-center gap-4"
           >
             <Link href="/services" className="group relative px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 hover:bg-accent-500 animate-float">
-              <span className="relative z-10">See Our Work</span>
+              <span className="relative z-10">View Our Services</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
             </Link>
             <Link href="/contact" className="px-8 py-3.5 rounded-lg border border-white/10 text-grey-300 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-white/5 transition-all backdrop-blur-sm animate-float-delayed">
@@ -97,7 +97,7 @@ export default function Home() {
                   { value: "50+", label: "Films Made" },
                   { value: "200+", label: "Ad Commercials" },
                   { value: "80+", label: "Happy Clients" },
-                  { value: "Fast", label: "AI-Powered Delivery" },
+                  { value: "Fast", label: "Production Speed" },
                 ].map((s, i) => (
                   <motion.div
                     key={s.label}
@@ -125,10 +125,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-accent-900/10 via-transparent to-transparent" />
           <div className="max-w-4xl mx-auto relative z-10 text-center">
             <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">How We Work</p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">From Idea to Screen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">From Script to Screen</h2>
             <p className="text-grey-300 text-lg max-w-2xl mx-auto mb-16">
-              We use the latest AI tools to produce films, ads, and websites —
-              faster and more affordably than traditional production.
+              We combine creative storytelling with powerful AI tools to produce
+              films, ads, and websites — faster and more affordably.
             </p>
           </div>
           <div className="max-w-[940px] mx-auto relative z-10">
@@ -164,9 +164,9 @@ export default function Home() {
         <section className="py-24 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">What We Make</p>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Production Services</h2>
-              <p className="text-grey-400 text-lg max-w-2xl mx-auto">From feature films to ad campaigns — we produce it all using AI.</p>
+              <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-3">What We Produce</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Films, Ads & Websites</h2>
+              <p className="text-grey-400 text-lg max-w-2xl mx-auto">We use AI to produce cinematic films, high-impact ads, and modern websites.</p>
             </div>
             <div className="flex flex-wrap justify-center gap-6 max-w-[940px] mx-auto">
               {services.map((s, i) => (
@@ -201,10 +201,10 @@ export default function Home() {
         <section className="py-24 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <GlassCard className="p-10 md:p-14" floatDelay={0.2}>
-              <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-4">Start Your Project</p>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Bring Your Vision to Life?</h2>
+              <p className="text-[11px] tracking-[0.2em] uppercase text-accent-400 mb-4">Let&apos;s Create</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Start Your Production?</h2>
               <p className="text-grey-400 mb-8 max-w-lg mx-auto">
-                Whether it&apos;s a film, ad campaign, or website — we produce it using AI, delivered fast and on budget.
+                Tell us your idea and we&apos;ll produce it — films, ads, or websites — using AI, delivered fast and on budget.
               </p>
               <div className="flex items-center justify-center gap-4">
                 <Link href="/contact" className="group relative px-8 py-3.5 rounded-lg bg-accent-600 text-white text-[11px] font-bold tracking-[0.2em] uppercase overflow-hidden transition-all duration-300 hover:bg-accent-500 animate-float">
